@@ -1,0 +1,81 @@
+<!---------------------------------------------------------------
+Project Name: Personal Music Library
+Group #: 1
+Contributor(s): Joey Brett, Najee Searcy
+Document Description: 
+    This page enables the user to enter their login credentials.
+    
+Web Technologies: HTML, CSS, FreeMarker
+----------------------------------------------------------------->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="http://localhost:8080/MusicLibrary/resources/css/LoginStyle.css">
+  <script src="http://localhost:8080/MusicLibrary/resources/scripts/logInScript.js"></script>
+  <script type="text/javascript" src="http://localhost:8080/MusicLibrary/resources/scripts/jquery224.min.js"></script>
+  <script type="text/javascript">
+  function cancelRegistration() {
+	  window.alert("cancelReg Clicked.");
+	  var regContent = document.getElementById("loginContainer").innerHTML;
+	  document.getElementById("content").innerHTML = regContent;
+	  
+  }
+  $(document).ready(function() {
+	  var login = $("#loginContent").html();
+	  $("#content").html(login);
+	  
+	  $("#forgot").click(function () {
+		  var regContent = $("#register").html();
+		  $("#content").html(regContent);
+		  });
+  
+
+	  $("#cancel").click(function () {
+		  alert("Cancel Button Clicked");
+		  var loginContent = $("#loginContent").html();
+		  $("#content").html(loginContent);
+		  });
+  });
+  </script>
+  <title>Welcome!</title>
+</head>
+
+<body id="mainBody" background="resources/imgs/background2.jpg" >
+<select onchange="changeBackGround();" id="selectBackGround">
+  <option value="Original">Original</option>
+  <option value="GreyScale">GreyScale</option>
+  <option value="Colorful">Colorful</option>
+</select>
+  <div class="main" id="content">
+    </div>
+    
+    <div id="regContainer" style="display:none;">
+    <div id="register">
+    	<p class="sign" align="center">User Registration</p>
+       <form class="form1" action=HomeServlet method=POST>
+      <input type=hidden name="option" value="register">
+      <input id="user" class="username " type="text" name="userName" placeholder="New Username" required>
+      <input class="pass" type="password"  name="Password" placeholder="New Password" required>
+      <input type="submit" class="submit" value="Register">
+     </form>
+     <br>
+      <a class="submit" id="" href="login.html">Cancel</a>
+    </div>
+    </div>
+    
+    <div id="loginContainer" style="display:none">
+   		<div id="loginContent">
+		    <p class="sign" align="center">Welcome To Your Personal Library!</p>
+		    <form class="form1" action="HomeServlet" method="post">
+		      <input type=hidden value="login" name="option">
+		      <input class="username " type="text" name="userName" placeholder="Username" required>
+		      <input class="pass" type="password"  name="Password" placeholder="Password" >
+		      <input type="submit" class="submit" value="Login">
+		    </form>
+		    <br>     
+		    <a class="forgot" id="forgot">New Account?</a> 
+	    </div>
+    </div>
+</body>
+
+</html>

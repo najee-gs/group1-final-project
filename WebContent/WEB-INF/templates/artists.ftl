@@ -1,7 +1,7 @@
 <!---------------------------------------------------------------
 Project Name: Personal Music Library
 Group #: 1
-Contributor(s): Najee Searcy
+Contributor(s): Najee Searcy, Shawein Smith, Noah Hickey
 Document Description:
     This page displays artist data. It retrieves the data from
 the ArtistServlet.
